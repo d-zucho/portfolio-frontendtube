@@ -3,8 +3,10 @@ import memojiAvatar2 from '@/assets/images/memoji-avatar-2.png'
 import memojiAvatar3 from '@/assets/images/memoji-avatar-3.png'
 import memojiAvatar4 from '@/assets/images/memoji-avatar-4.png'
 import memojiAvatar5 from '@/assets/images/memoji-avatar-5.png'
+import grainImage from '@/assets/images/grain.jpg'
 import { SectionHeader } from '@/components/SectionHeader'
 import Image from 'next/image'
+import { Card } from '@/components/Card'
 
 const testimonials = [
   {
@@ -41,24 +43,37 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className='pt-16 pb-60 container'>
-      <SectionHeader
-        title='What Clients Say about Me'
-        subtitle='HAPPY CLIENTS'
-        description="Don't just take my word for it. See what my clients have to say about my work."
-      />
-
-      <div>
-        {testimonials.map((testimonial) => (
-          <article key={testimonial.name}>
-            <Image src={testimonial.avatar} alt={testimonial.name} />
-            <div>
-              <span>{testimonial.name}</span>
-              <span>{testimonial.position}</span>
-            </div>
-            <p>{testimonial.text}</p>
-          </article>
-        ))}
+    <section className='py-16'>
+      <div className='container'>
+        <SectionHeader
+          title='What Clients Say about Me'
+          subtitle='HAPPY CLIENTS'
+          description="Don't just take my word for it. See what my clients have to say about my work."
+        />
+        <div className='py-16 flex flex-col items-center'>
+          {testimonials.map((testimonial) => (
+            // <article
+            //   key={testimonial.name}
+            //   className='bg-gray-800 rounded-3xl p-6 relative overflow-hidden outline-2 gap-12 outline outline-white/20 z-0'
+            // >
+            //   <div
+            //     className='absolute inset-0 -z-10 opacity-5 pointer-events-none'
+            //     style={{
+            //       backgroundImage: `url(${grainImage.src})`,
+            //     }}
+            //   />
+            // </article>
+            <Card key={testimonial.name}>
+              <Image src={testimonial.avatar} alt={testimonial.name} />
+              <div>
+                <span>{testimonial.name}</span>
+                <span>{testimonial.position}</span>
+              </div>
+              <p>{testimonial.text}</p>
+              <div></div>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   )

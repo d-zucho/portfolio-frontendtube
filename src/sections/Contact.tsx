@@ -24,10 +24,12 @@ export const ContactSection = () => {
               </p>
             </div>
 
-            <button className='inline-flex gap-2 items-center text-white bg-gray-900 px-6 h-12 rounded-xl border-gray-900 border-2'>
-              <span className='font-semibold'>Contact Me</span>
-              <ArrowUpRightIcon className='size-4' />
-            </button>
+            <div>
+              <button className='inline-flex gap-2 items-center text-white bg-gray-900 px-6 h-12 rounded-xl border-gray-900 lg:w-max border-2'>
+                <span className='font-semibold'>Contact Me</span>
+                <ArrowUpRightIcon className='size-4' />
+              </button>
+            </div>
           </div>
         </div>
       </div>
